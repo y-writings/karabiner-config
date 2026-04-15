@@ -1,6 +1,7 @@
 import { obsidianRule } from "./rules/application/obsidian"
 import { slackRule } from "./rules/application/slack"
 import { emacsKeybindingMinimalRule } from "./rules/emacs-keybinding-minimal"
+import { imeRule } from "./rules/ime"
 import { layerLcmdAppSwitchMissionDownRule } from "./rules/layer-lcmd/app-switch/mission-down"
 import { layerLcmdAppSwitchOperationRule } from "./rules/layer-lcmd/app-switch/operation"
 import { layerLcmdAppSwitchStartRule } from "./rules/layer-lcmd/app-switch/start-and-reset"
@@ -22,6 +23,7 @@ export const rules = [
   vimEscapeCommandRule(),
   preProcessControlCommandRule(),
   disableConflictingOptionCommandRule(),
+  imeRule(),
   layerLcmdStartRule(),
   layerLcmdAppSwitchStartRule(),
   layerLcmdAppSwitchOperationRule(),
