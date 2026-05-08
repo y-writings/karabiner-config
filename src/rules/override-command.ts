@@ -52,26 +52,3 @@ export const preProcessControlCommandRule = () => {
     }),
   ])
 }
-
-export const disableConflictingOptionCommandRule = () => {
-  return rule("競合しやすい既存ショートカットを一時的に無効化する。").manipulators([
-    map("j", ["left_option"])
-      .toNone()
-      .description(
-        [
-          "typo防止のため、一時的に無効化している。",
-          "本来はArcでタブ移動に割り当てている。",
-          "NotionとArc操作がコンフリクトし、Notion側にキー入力が多発したため、無効化。",
-        ].join(""),
-      ),
-    map("k", ["left_option"])
-      .toNone()
-      .description(
-        [
-          "typo防止のため、一時的に無効化している。",
-          "本来はArcでタブ移動に割り当てている。",
-          "NotionとArc操作がコンフリクトし、Notion側にキー入力が多発したため、無効化。",
-        ].join(""),
-      ),
-  ])
-}

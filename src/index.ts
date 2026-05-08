@@ -11,18 +11,12 @@ import { layerNumPadRule } from "./rules/layer-num/num-pad"
 import { layerNumStartRule } from "./rules/layer-num/start-and-reset"
 import { layerRcmdLeaderRule, layerRightCommandSignRule } from "./rules/layer-rcmd/sign"
 import { layerSignRule } from "./rules/layer-sign/sign"
-import {
-  disableCommandRule,
-  disableConflictingOptionCommandRule,
-  preProcessControlCommandRule,
-  vimEscapeCommandRule,
-} from "./rules/override-command"
+import { disableCommandRule, preProcessControlCommandRule, vimEscapeCommandRule } from "./rules/override-command"
 import { windowManagerCommandRule } from "./rules/window-manager/command"
 
 export const rules = [
   vimEscapeCommandRule(),
   preProcessControlCommandRule(),
-  disableConflictingOptionCommandRule(),
   imeRule(),
   layerLcmdStartRule(),
   layerLcmdAppSwitchStartRule(),
