@@ -222,41 +222,6 @@
             ]
           },
           {
-            "description": "競合しやすい既存ショートカットを一時的に無効化する。",
-            "manipulators": [
-              {
-                "type": "basic",
-                "from": {
-                  "key_code": "j",
-                  "modifiers": {
-                    "mandatory": ["left_option"]
-                  }
-                },
-                "to": [
-                  {
-                    "key_code": "vk_none"
-                  }
-                ],
-                "description": "typo防止のため、一時的に無効化している。本来はArcでタブ移動に割り当てている。NotionとArc操作がコンフリクトし、Notion側にキー入力が多発したため、無効化。"
-              },
-              {
-                "type": "basic",
-                "from": {
-                  "key_code": "k",
-                  "modifiers": {
-                    "mandatory": ["left_option"]
-                  }
-                },
-                "to": [
-                  {
-                    "key_code": "vk_none"
-                  }
-                ],
-                "description": "typo防止のため、一時的に無効化している。本来はArcでタブ移動に割り当てている。NotionとArc操作がコンフリクトし、Notion側にキー入力が多発したため、無効化。"
-              }
-            ]
-          },
-          {
             "description": "日本語IMEの変換ショートカットを追加する。",
             "manipulators": [
               {
