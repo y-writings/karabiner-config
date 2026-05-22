@@ -12,7 +12,7 @@ env.CLI = "/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabine
 run = '"$CLI" ./build/karabiner.json'
 
 [tasks.build]
-run = "bun src/build.ts && mise run format"
+run = 'docker build -t karabiner-config-builder . && docker run --rm -v "$PWD":/workspace -w /workspace karabiner-config-builder'
 
 [tasks."lint"]
 run = "bun run biome lint --write src/"
