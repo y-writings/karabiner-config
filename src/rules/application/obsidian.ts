@@ -8,7 +8,7 @@ import { Variables } from "../../values/variables"
 const obsidianApp = ifAppId(AppBundleIds.obsidian)
 
 const manipulators = [
-  map("k", ["command"]).to("f19").condition(obsidianApp),
+  map("w", ["left_control"]).to("f19").condition(obsidianApp),
   map("left_shift")
     .to([setVar(Variables.leftOneTap, 0), toKey("f17")])
     .condition(ifVarIs(Variables.leftOneTap, 1), obsidianApp),

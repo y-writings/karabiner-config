@@ -44,8 +44,8 @@ const manipulators = [
   map("c")
     .to(toKey("6", ["left_shift"]))
     .condition(numLayerOn),
-  map("v")
-    .to(toKey("4", ["left_shift"]))
+  map("n")
+    .to(toKey("6", ["left_shift"]))
     .condition(numLayerOn),
 ]
 
