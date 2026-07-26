@@ -1,7 +1,8 @@
 import { layer, map, rule, toKey, withCondition } from "karabiner.ts"
-import { ifVarIs } from "../../helpers/conditions"
+import { ifInputLanguage, ifVarIs } from "../../helpers/conditions"
 import { setVar } from "../../helpers/events"
 import { Hyper } from "../../values/hyper"
+import { InputLanguages } from "../../values/input-languages"
 import { Layers } from "../../values/layers"
 import { resetAll } from "../../values/reset"
 import { Variables } from "../../values/variables"
@@ -28,7 +29,12 @@ const manipulators = [
   map("j", ["left_shift"]).to("delete_forward"),
   map("j", []).to("delete_or_backspace"),
   map("e", [], optionalAny).to("return_or_enter"),
-  map("q", [], optionalAny).to([{ key_code: "japanese_eisuu" }, { key_code: "escape" }, ...resetAll]),
+  map("q", [], optionalAny)
+    .to([{ key_code: "japanese_eisuu" }, { key_code: "escape" }, ...resetAll])
+    .condition(ifInputLanguage(InputLanguages.ja)),
+  map("q", [], optionalAny)
+    .to([{ key_code: "escape" }, ...resetAll])
+    .condition(ifInputLanguage(InputLanguages.ja).unless()),
   map("t", [], optionalAny).to("tab"),
   // Commandキーに対応するOS標準ショートカットキー
   // 体が覚えてしまっているため、設定している。
