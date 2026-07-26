@@ -20,6 +20,7 @@ const manipulators = [
   map("left_shift").to("left_shift"),
   map("left_command").to("left_command"),
   map("left_option").to("left_option"),
+  map("left_control").to("left_control"),
   // 記号入力
   map("f", [], optionalAny).to("hyphen"),
   map("g", [], optionalAny).to("equal_sign"),

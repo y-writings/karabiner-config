@@ -37,3 +37,19 @@ test("q switches Japanese input before Escape and skips the switch otherwise", (
     }),
   ])
 })
+
+test("passes left control through while the right command layer is active", () => {
+  const leftControlManipulators = layerRightCommandSignRule()
+    .build()
+    .manipulators.filter((manipulator) => {
+      const from = manipulator.from
+      return from != null && "key_code" in from && from.key_code === "left_control"
+    })
+
+  expect(leftControlManipulators).toEqual([
+    expect.objectContaining({
+      from: { key_code: "left_control" },
+      to: [{ key_code: "left_control" }],
+    }),
+  ])
+})
