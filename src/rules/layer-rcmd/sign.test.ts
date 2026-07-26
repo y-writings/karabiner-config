@@ -18,6 +18,10 @@ test("q switches Japanese input before Escape and skips the switch otherwise", (
   expect(qManipulators).toHaveLength(2)
   expect(qManipulators).toEqual([
     expect.objectContaining({
+      from: {
+        key_code: "q",
+        modifiers: { mandatory: [], optional: ["any"] },
+      },
       to: [{ key_code: "japanese_eisuu" }, { key_code: "escape" }, ...resetActions],
       conditions: expect.arrayContaining([
         {
@@ -27,6 +31,10 @@ test("q switches Japanese input before Escape and skips the switch otherwise", (
       ]),
     }),
     expect.objectContaining({
+      from: {
+        key_code: "q",
+        modifiers: { mandatory: [], optional: ["any"] },
+      },
       to: [{ key_code: "escape" }, ...resetActions],
       conditions: expect.arrayContaining([
         {
@@ -34,6 +42,29 @@ test("q switches Japanese input before Escape and skips the switch otherwise", (
           input_sources: [{ language: "ja" }],
         },
       ]),
+    }),
+  ])
+})
+
+test("passes left control through while the right command layer is active", () => {
+  const leftControlManipulators = layerRightCommandSignRule()
+    .build()
+    .manipulators.filter((manipulator) => {
+      const from = manipulator.from
+      return from != null && "key_code" in from && from.key_code === "left_control"
+    })
+
+  expect(leftControlManipulators).toEqual([
+    expect.objectContaining({
+      from: { key_code: "left_control" },
+      to: [{ key_code: "left_control" }],
+      conditions: [
+        {
+          type: "variable_if",
+          name: "layer_rcmd",
+          value: 1,
+        },
+      ],
     }),
   ])
 })
