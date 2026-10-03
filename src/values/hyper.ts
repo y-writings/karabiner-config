@@ -17,6 +17,7 @@ export const Hyper = {
     clipboardHistory: toKey("w", HyperNoShift),
     switchWindows: toKey("s", HyperNoShift),
     obsidian: toKey("i", HyperNoShift),
+    zed: toKey("z", HyperNoShift),
     dbeaver: toKey("d", HyperNoShift),
     ghostty: toKey("g", HyperNoShift),
     cursor: toKey("c", HyperNoShift),
