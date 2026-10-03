@@ -89,6 +89,7 @@ export const layerRcmdLeaderRule = () => {
       map("w").to([Hyper.app.clipboardHistory, toLeaderOff]).description("Raycast: Clipboard History"),
       map("s").to([Hyper.app.switchWindows, toLeaderOff]).description("Raycast: Switch Windows"),
       map("i").to([Hyper.app.obsidian, toLeaderOff]).description("Obsidian"),
+      map("z").to([Hyper.app.zed, toLeaderOff]).description("Zed"),
       map("d").to([Hyper.app.dbeaver, toLeaderOff]).description("DBeaver"),
       map("g").to([Hyper.app.ghostty, toLeaderOff]).description("Ghostty"),
       map("c").to([Hyper.app.cursor, toLeaderOff]).description("Cursor"),
