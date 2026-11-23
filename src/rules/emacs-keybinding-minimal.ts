@@ -12,7 +12,7 @@ const manipulators = [
   // 標準カーソル移動
   map("n", ["left_control"]).to("down_arrow").description("標準カーソル移動↓"),
   map("p", ["left_control"]).to("up_arrow").description("標準カーソル移動↑"),
-  map("b", ["left_control"]).to("left_arrow").description("標準カーソル移動←"),
+  // map("b", ["left_control"]).to("left_arrow").description("標準カーソル移動←"),
   map("f", ["left_control"]).to("right_arrow").description("標準カーソル移動→"),
   // terminal上でviを使うことを考慮し、terminalでは無効化
   map("a", ["left_control"], "any")
