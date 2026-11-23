@@ -2993,21 +2993,6 @@
               {
                 "type": "basic",
                 "from": {
-                  "key_code": "b",
-                  "modifiers": {
-                    "mandatory": ["left_control"]
-                  }
-                },
-                "to": [
-                  {
-                    "key_code": "left_arrow"
-                  }
-                ],
-                "description": "標準カーソル移動←"
-              },
-              {
-                "type": "basic",
-                "from": {
                   "key_code": "f",
                   "modifiers": {
                     "mandatory": ["left_control"]
